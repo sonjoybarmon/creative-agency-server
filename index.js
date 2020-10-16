@@ -31,11 +31,9 @@ client.connect(err => {
   })
 //show order list
     app.get('/review', (req, res) => {
-      console.log(req.query.email)
       Orders.find({ email: req.query.email})
       .toArray((err , documents)=>{
           res.send(documents)
-          console.log(documents)
       })
   })
 
@@ -99,12 +97,6 @@ client.connect(err => {
 
 
 });
-
-
-
-
-
-
 app.get('/', (req, res) => {
     res.send('Hello World!')
   })
